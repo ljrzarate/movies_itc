@@ -39,16 +39,14 @@ class Api::PersonsController < ApplicationController
     @person.destroy
 
     respond_to do |format|
-      format.json { head :no_content }
+      format.json { render json: {message: "Person destroyed"} }
     end
   end
 
   private
     def set_person
       @person = User.find_by_id(params[:id])
-      respond_to do |format|
-        format.json { render json: {message: "Not found"}, status: :unprocessable_entity } if @person.blank?
-      end
+      render json: {message: "Not found"}, status: :unprocessable_entity if @person.blank?
     end
 
     def person_params

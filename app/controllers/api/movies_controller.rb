@@ -40,10 +40,8 @@ class Api::MoviesController < ApplicationController
 
   private
     def set_movie
-      @movie = Movie.find(params[:id])
-      respond_to do |format|
-        format.json { render json: {message: "Not found"}, status: :unprocessable_entity } if @movie.blank?
-      end
+      @movie = Movie.find_by_id(params[:id])
+      render json: {message: "Not found"}, status: :unprocessable_entity if @movie.blank?
     end
 
     def movie_params

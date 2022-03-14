@@ -7,6 +7,7 @@ To run it locally:
 * rake db:create
 * rake db:migrate
 * rake db:seed
+* rails s
 
 
 ### Registered Users
@@ -96,3 +97,23 @@ All endpoint for GET request do not need `Bearer <token>` in the Authorization H
 For POST, PUT, PATCH, DELETE you will need to login get the token and send it as Authorization Header.
 
 You can fin a POSTMAN Collection in the root of the project under the name: `Movie-ItCrowd.postman_collection.json`
+
+
+### List of used libraries/frameworks:
+1. Rails
+2. Jbuilder
+3. Devise
+4. Devise JWT
+5. friendly_id
+6. pry
+
+### Justification of chosen libraries/frameworks:
+Jbuilder: comes by default with the Rails framework and it is easy and scalable in its use
+
+Devise: Well known in the Ruby and Rails comunity with a lot of intefaces with some other gems (maybe overkill for this app)
+
+Devise JWT: Well integrated in the generation of JSON Web Token and pretty standard in the comunity as well
+
+friendly_id: Well known in the comunity to managed slugs and really simple in its implementation
+
+Pry: Really good to debug, well known in the comunity.

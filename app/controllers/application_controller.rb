@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base  
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   protect_from_forgery with: :null_session
 
   respond_to :json
@@ -11,6 +12,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def record_not_found(error)
+    render json: {error: error.message}, status: :not_found
+  end 
 
   def authenticate_user!(options = {})
     head :unauthorized unless signed_in?
