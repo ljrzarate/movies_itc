@@ -21,6 +21,7 @@ params: `{"email": "test1@mail.com", "password": "Password!"}`
 
 ## Movies:
 * Create a movie:
+  
   url: `POST /api/movies`
   params:   
   ```
@@ -35,15 +36,18 @@ params: `{"email": "test1@mail.com", "password": "Password!"}`
             "last_name": "Pit"
         }
     ]
-}```
+  }
+
 * Get a movie
+  ```
   url: `GET /api/movies/:id`
 
 * Update a movie
+  ```
   url: `PATCH /api/movies/:id`
   url: `PUT   /api/movies/:id`
   params:
-  ```
+
   {
     "title": "nueva movie by Brat 2",
     "release_year": "1991-08-08",
@@ -55,7 +59,7 @@ params: `{"email": "test1@mail.com", "password": "Password!"}`
             "last_name": "Pit"
         }
     ]
-}```
+  }
 
 * Deletes a movie
 url: `DELETE /api/movies/:id`
@@ -68,7 +72,7 @@ url: `DELETE /api/movies/:id`
   {
     "first_name": "Pepito",
     "last_name": "Perez"
-  }```
+  }
 
 * Get a person
   url: `GET /api/persons/:id`
@@ -81,7 +85,7 @@ url: `DELETE /api/movies/:id`
   {
     "first_name": "Fulanito",
     "last_name": "DeTal"
-  }```
+  }
 
 * Deletes a person
 url: `DELETE /api/persons/:id`
