@@ -52,6 +52,7 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'
+gem "faker"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -74,6 +75,5 @@ group :test, :development do
   gem "capybara"
   gem "pry"
   gem "selenium-webdriver"
-  gem "webdrivers"
-  gem "faker"
+  gem "webdrivers"  
 end
