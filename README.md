@@ -98,6 +98,7 @@ For POST, PUT, PATCH, DELETE you will need to login get the token and send it as
 
 You can fin a POSTMAN Collection in the root of the project under the name: `Movie-ItCrowd.postman_collection.json`
 
+## HEROKU URL: `https://movies-itcrowd.herokuapp.com/`
 
 ### List of used libraries/frameworks:
 1. Rails
