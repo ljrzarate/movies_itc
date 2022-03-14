@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "0ac2b5a9-8516-4d4c-aa30-7c658740d97f",
+		"name": "Movie-ItCrowd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/registered_users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"registered_users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/persons.json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/persons.json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/persons/<id>.json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/persons.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA2OTM0fQ.rQIo37m7Xef_4OPJm0xH9qJr21CGRe9zqIxHIyQIXKM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"person\": {\n        \"first_name\": \"test\",\n        \"last_name\": \"test22222\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/persons.json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persons/1.json",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA2OTM0fQ.rQIo37m7Xef_4OPJm0xH9qJr21CGRe9zqIxHIyQIXKM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"person\": {\n        \"first_name\": \"test1\",\n        \"last_name\": \"My last name\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/persons/1.json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persons/1.json",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA2OTM0fQ.rQIo37m7Xef_4OPJm0xH9qJr21CGRe9zqIxHIyQIXKM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/persons/1.json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/movies.json",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/<id>.json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/1.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA0Nzk2fQ.8W-9mOjE4EG2MviQ8xkxcQeM12lHWhw1y7s3HUbsYeE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"nueva movie by Brat 2\",\n    \"release_year\": \"1991-08-08\",\n    \"producers_attributes\": [\n        {\n            \"first_name\": \"Brat\",\n            \"last_name\": \"Pit\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/<id>.json",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\"first_name\": \"Brat\", \"last_name\": \"Pit\"}\n        ],\n        \"producers_attributes\": [\n            {\n                \"first_name\": \"test\",\n                \"last_name\": \"TestTest\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies/1.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/<id>.json [DELETE NESTED]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\"id\": 27, \"_destroy\": \"1\"}\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/movies/1.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movies/<id>.json",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA1MTY1fQ.dcEapVA8zecgjZo9Ivb85CEWKt0m01wwLo4PNpbaQdg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/1.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"1.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

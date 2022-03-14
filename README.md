@@ -95,3 +95,4 @@ url: `DELETE /api/persons/:id`
 All endpoint for GET request do not need `Bearer <token>` in the Authorization Header.
 For POST, PUT, PATCH, DELETE you will need to login get the token and send it as Authorization Header.
 
+You can fin a POSTMAN Collection in the root of the project under the name: `Movie-ItCrowd.postman_collection.json`
