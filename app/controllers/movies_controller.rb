@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
 
     respond_to do |format|
-      if @movie.save
+      if @movie.save        
         format.html { redirect_to movie_url(@movie), notice: "Movie was successfully created." }
         format.json { render :show, status: :created, location: @movie }
       else
@@ -36,9 +36,7 @@ class MoviesController < ApplicationController
 
   def destroy
     @movie.destroy
-
     respond_to do |format|
-      format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -49,6 +47,15 @@ class MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:title, :release_year)
+      user_attributes = [:id, :first_name, :last_name, :aliases, :_destroy]
+      params.require(:movie).permit(
+        :id,
+        :_destroy,
+        :title, 
+        :release_year,
+        actors_attributes: user_attributes,
+        producers_attributes: user_attributes,
+        directors_attributes: user_attributes
+      )
     end
 end

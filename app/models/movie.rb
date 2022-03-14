@@ -7,7 +7,7 @@ class Movie < ApplicationRecord
   has_many :directors, through: :castings
 
   validates :title, :release_year, presence: true
-  accepts_nested_attributes_for :actors, :producers, :directors
+  accepts_nested_attributes_for :actors, :producers, :directors, allow_destroy: true, reject_if: proc { |attributes| attributes['first_name'].blank? }
 
   friendly_id :title, use: :slugged
 
