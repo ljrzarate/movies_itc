@@ -49,6 +49,9 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'friendly_id', '~> 5.4.0'
+gem 'rack-cors'
+gem 'devise'
+gem 'devise-jwt'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -69,6 +72,7 @@ end
 group :test, :development do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem "pry"
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "faker"

@@ -3,5 +3,5 @@ json.url movie_url(movie, format: :json)
 json.release_year_roman movie.release_year_roman
 
 if local_assigns[:include_casting]
-  json.partial! "movies/castings", movie: movie
+  json.partial! "api/movies/castings", movie: movie
 end

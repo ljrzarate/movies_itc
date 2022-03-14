@@ -8,6 +8,6 @@ class CreateCastings < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :movie_id, :actor_id, :producer_id, :director_id
+    add_index(:castings, [:movie_id, :actor_id])
   end
 end

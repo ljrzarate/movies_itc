@@ -1,5 +1,6 @@
-class PersonsController < ApplicationController
+class Api::PersonsController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ update create destroy ]
 
   def index
     @persons = User.all
@@ -9,14 +10,14 @@ class PersonsController < ApplicationController
   end
 
   def create
-    @person = person.new(person_params)
+    @person = User.new(person_params)
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to person_url(@person), notice: "person was successfully created." }
-        format.json { render :show, status: :created, location: @person }
+        format.json do
+          render partial: "api/persons/person", locals: {person: @person}, status: :created
+        end
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
@@ -25,10 +26,10 @@ class PersonsController < ApplicationController
   def update
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to person_url(@person), notice: "person was successfully updated." }
-        format.json { render :show, status: :ok, location: @person }
+        format.json do
+          render partial: "api/persons/person", locals: {person: @person}, status: :ok
+        end
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
@@ -38,14 +39,16 @@ class PersonsController < ApplicationController
     @person.destroy
 
     respond_to do |format|
-      format.html { redirect_to persons_url, notice: "person was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
     def set_person
-      @person = User.find(params[:id])
+      @person = User.find_by_id(params[:id])
+      respond_to do |format|
+        format.json { render json: {message: "Not found"}, status: :unprocessable_entity } if @person.blank?
+      end
     end
 
     def person_params

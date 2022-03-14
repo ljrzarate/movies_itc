@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :movies
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  resources :movies, only: [:index, :show, :create, :update, :delete]
-  resources :persons, only: [:index, :show, :create, :update, :delete]
+  scope :api, default: {format: :json}, module: :api do
+    devise_for :registered_users, controllers: { sessions: :sessions }, path_names: { sign_in: :login }
+    resource :registered_user, only: [:show, :update]
+    resources :movies, only: [:index, :show, :create, :update, :destroy]
+    resources :persons, only: [:index, :show, :create, :update, :destroy]
+  end  
 end

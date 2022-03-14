@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   def movies_as_producer
     Movie.includes(:castings).where(castings: {producer_id: self.id})
-  end
+  end  
 end

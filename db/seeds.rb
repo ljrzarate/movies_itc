@@ -9,6 +9,7 @@
 Casting.destroy_all
 Movie.destroy_all
 User.destroy_all
+RegisteredUser.destroy_all
 
 actor1 = User.create(first_name: Faker::Games::Heroes.name, last_name: Faker::Games::Heroes.klass)
 actor2 = User.create(first_name: Faker::Games::Heroes.name, last_name: Faker::Games::Heroes.klass)
@@ -44,3 +45,9 @@ movie3.actors = [actor5, actor2]
 movie3.producers = [producer5, producer2]
 movie3.directors = [director1, director2]
 movie3.save!
+
+
+##############################################
+
+registed_user1 = RegisteredUser.create(username: "test1", email: "test1@mail.com", password: "Password!", password_confirmation: "Password!")
+registed_user2 = RegisteredUser.create(username: "test2", email: "test2@mail.com", password: "Password!", password_confirmation: "Password!")
