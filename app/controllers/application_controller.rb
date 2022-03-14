@@ -1,6 +1,5 @@
-class ApplicationController < ActionController::Base  
-  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
-  protect_from_forgery with: :null_session
+class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found  
 
   respond_to :json
 
