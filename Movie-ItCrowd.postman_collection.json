@@ -10,6 +10,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"test1@mail.com\", \"password\": \"Password!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "localhost:3000/api/registered_users/login",
 					"host": [
@@ -213,7 +222,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"nueva movie by Brat 2\",\n    \"release_year\": \"1991-08-08\",\n    \"producers_attributes\": [\n        {\n            \"first_name\": \"Brat\",\n            \"last_name\": \"Pit\"\n        }\n    ]\n}",
+					"raw": "{\n    \"title\": \"nueva movie by Brat 2\",\n    \"release_year\": \"1991-08-08\",\n    \"actors_attributes\": [\n        {\n            \"first_name\": \"El protro\",\n            \"last_name\": \"Indomable\"\n        }\n    ],\n    \"producers_attributes\": [\n        {\n            \"first_name\": \"Brat\",\n            \"last_name\": \"Pit\"\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -239,10 +248,16 @@
 			"name": "/movies/<id>.json",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer aa",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\"first_name\": \"Brat\", \"last_name\": \"Pit\"}\n        ],\n        \"producers_attributes\": [\n            {\n                \"first_name\": \"test\",\n                \"last_name\": \"TestTest\"\n            }\n        ]\n    }\n}",
+					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\n                \"first_name\": \"Brat\",\n                \"last_name\": \"Pit\"\n            }\n        ],\n        \"producers_attributes\": [\n            {\n                \"first_name\": \"test\",\n                \"last_name\": \"TestTest\"\n            }\n        ]\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -250,7 +265,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/movies/1.json",
+					"raw": "http://localhost:3000/api/movies/4.json",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -259,7 +274,7 @@
 					"path": [
 						"api",
 						"movies",
-						"1.json"
+						"4.json"
 					]
 				}
 			},
@@ -269,10 +284,16 @@
 			"name": "/movies/<id>.json [DELETE NESTED]",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjUyNDA0Nzk2fQ.8W-9mOjE4EG2MviQ8xkxcQeM12lHWhw1y7s3HUbsYeE",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\"id\": 27, \"_destroy\": \"1\"}\n        ]\n    }\n}",
+					"raw": "{\n    \"movie\": {\n        \"title\": \"nueva movie\",\n        \"release_year\": \"1991-08-08\",\n        \"actors_attributes\": [\n            {\"id\": 18, \"_destroy\": \"1\"}\n        ]\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
