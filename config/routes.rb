@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "home#index"
   scope :api, defaults: {format: :json}, module: :api do
     devise_for :registered_users, controllers: { sessions: :sessions }, path_names: { sign_in: :login }
     resource :registered_user, only: [:show, :update]
