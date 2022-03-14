@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :null_session
+  include Pundit
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found  
+  rescue_from Pundit::NotAuthorizedError, :with => :render_forbidden  
 
   respond_to :json
 
@@ -10,7 +13,19 @@ class ApplicationController < ActionController::Base
     @current_user ||= super || RegisteredUser.find(@current_user_id)
   end
 
+  def pundit_user
+    current_user
+  end
+
   private
+
+  def render_error(message, status, additional_data = {})
+    render json: additional_data.merge({ message: message }), status: status
+  end
+
+  def render_forbidden(exception = nil)
+    render_error(exception ? exception.message : 'You are not authorized to perform this action', :forbidden)
+  end
 
   def record_not_found(error)
     render json: {error: error.message}, status: :not_found
